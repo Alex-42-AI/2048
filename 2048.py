@@ -1,4 +1,10 @@
 import random
+from os import system, name
+def clear():
+    if name == 'nt':
+        system('cls')
+    else:
+        system('clear')
 n = int(input())
 grid = [[0 for _ in range(n)] for _ in range(n)]
 grid[random.randrange(n)][random.randrange(n)] = [2, 4][random.randrange(5) == 4]
@@ -97,3 +103,4 @@ while True:
             break
         r, c = random.choice(spaces)
         grid[r][c] = [2, 4][random.randrange(5) == 4]
+        clear()
